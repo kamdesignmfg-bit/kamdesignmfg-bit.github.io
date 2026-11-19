@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="KAM Design — freelance mechanical engineering, manufacturing robotics, automation and scale-up consulting.">
+  <meta name="theme-color" content="#293f30">
+  <title>KAM Design | Mechanical Design, Robotics & Automation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="#services" aria-label="KAM Design home">
+        <span class="brand-name">KAM Design</span>
+        <span class="brand-location">PARIS, FRANCE / SAN FRANCISCO, CA</span>
+      </a>
+
+      <nav class="desktop-nav" aria-label="Main navigation">
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <a class="header-cta" href="#contact">Start a Project <span aria-hidden="true">→</span></a>
+
+      <button class="mobile-menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="mobile-navigation">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <nav class="mobile-navigation" id="mobile-navigation" aria-hidden="true">
+    <a href="#services">Services <span>01</span></a>
+    <a href="#contact">Contact <span>02</span></a>
+    <a href="#contact" class="mobile-navigation-cta">Start a Project <span>→</span></a>
+  </nav>
+
+  <main>
+    <section class="services-page" id="services" aria-label="Services">
+      <div class="service-grid">
+        <article class="service-card">
+          <div class="service-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="m14.8 5.2 4 4M4 20l4.2-.9L19.2 8.1a2.83 2.83 0 0 0-4-4L4.2 15.1 4 20Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="m12.8 7.2 4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h1>Machine &amp;<br>Product Design</h1>
+          <ul class="service-list">
+            <li>3D mechanical design and CAD modelling</li>
+            <li>Detailed manufacturing drawings and technical documentation</li>
+            <li>Prototype development and design iterations + DFM/DFA</li>
+          </ul>
+        </article>
+
+        <article class="service-card service-card-featured">
+          <div class="service-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M4 10.2 12 3l8 7.2v9.3H4v-9.3Z" fill="currentColor" opacity=".92"/>
+              <path d="M9.1 13.2a2.9 2.9 0 1 0 5.8 0 2.9 2.9 0 0 0-5.8 0Z" stroke="#293f30" stroke-width="1.6"/>
+              <path d="M12 8.8v1.1M12 16.5v1.1M7.6 13.2h1.1m6.6 0h1.1" stroke="#293f30" stroke-width="1.4" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h2>Manufacturing<br>Robotics<br>&amp; Automation</h2>
+          <ul class="service-list">
+            <li>Pick &amp; Place Systems</li>
+            <li>End-Effector Tooling</li>
+            <li>Workcell &amp; Line Automation</li>
+          </ul>
+        </article>
+
+        <article class="service-card">
+          <div class="service-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M4 4.5h16v15H4z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+              <path d="M12 17V7m0 0-4 4m4-4 4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h2>Scale-Up<br>Consulting</h2>
+          <ul class="service-list">
+            <li>Pilot to Production Ramp</li>
+            <li>Bottleneck &amp; OEE Analysis</li>
+            <li>Equipment Sourcing &amp; CapEx</li>
+          </ul>
+        </article>
+      </div>
+
+      <a class="consultation-button" href="#contact">Get in Touch <span aria-hidden="true">↗</span></a>
+    </section>
+
+    <section class="contact-page" id="contact">
+      <div class="contact-inner">
+        <div class="contact-copy">
+          <div class="section-kicker"><span></span> CONTACT</div>
+          <h2>Let's Build<br>Together<span class="accent-period">.</span></h2>
+          <p class="contact-intro">Tell me about your production environment and what you're trying to build, automate, or scale. Direct conversation, no sales process.</p>
+
+          <div class="contact-details">
+            <div class="contact-detail">
+              <span class="detail-label">EMAIL</span>
+              <a href="mailto:kam.design.mfg@gmail.com">kam.design.mfg@gmail.com</a>
+            </div>
+            <div class="contact-detail">
+              <span class="detail-label">PHONE</span>
+              <a href="tel:+33769363551">+33 7 69 36 35 51 FR</a>
+              <a href="tel:+18057956910">+1 (805) 795-6910 US</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-panel">
+          <h3>Send a project brief</h3>
+          <form id="contact-form">
+            <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" class="form-honeypot">
+            <input type="hidden" name="_subject" value="New KAM Design project enquiry">
+            <input type="hidden" name="_template" value="table">
+            <div class="form-row">
+              <div class="form-field">
+                <label for="name">NAME <span>*</span></label>
+                <input type="text" id="name" name="name" autocomplete="name" required>
+              </div>
+              <div class="form-field">
+                <label for="company">COMPANY</label>
+                <input type="text" id="company" name="company" autocomplete="organization">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-field">
+                <label for="email">EMAIL <span>*</span></label>
+                <input type="email" id="email" name="email" autocomplete="email" required>
+              </div>
+              <div class="form-field">
+                <label for="phone">PHONE</label>
+                <input type="tel" id="phone" name="phone" autocomplete="tel">
+              </div>
+            </div>
+
+            <div class="form-field form-field-full">
+              <label for="project">PROJECT TYPE</label>
+              <select id="project" name="project">
+                <option value="">Select primary focus...</option>
+                <option>Machine &amp; Product Design</option>
+                <option>Manufacturing Robotics &amp; Automation</option>
+                <option>Scale-Up Consulting</option>
+                <option>Other</option>
+              </select>
+            </div>
+
+            <div class="form-field form-field-full brief-field">
+              <label for="brief">PROJECT BRIEF <span>*</span></label>
+              <textarea id="brief" name="brief" rows="4" placeholder="Production environment, constraints, rough timeline..." required></textarea>
+            </div>
+
+            <div class="form-actions">
+              <button type="submit" class="submit-button">Send Brief <span aria-hidden="true">→</span></button>
+              <p class="form-note">We only use your details to reply to your inquiry. No marketing, no sharing.</p>
+            </div>
+            <p class="form-message" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a class="footer-logo" href="#services">
+            <span class="footer-mark" aria-hidden="true">K</span>
+            <span>KAM Design</span>
+          </a>
+          <p>Freelance mechanical engineering providing machine &amp; product design, manufacturing robotics &amp; automation, and scale-up consulting.</p>
+        </div>
+
+        <div class="footer-column">
+          <span class="footer-label">EXPLORE</span>
+          <a href="#services">Services</a>
+          <a href="#contact">Contact</a>
+        </div>
+
+        <div class="footer-column footer-contact">
+          <span class="footer-label">CONTACT</span>
+          <a href="mailto:kam.design.mfg@gmail.com">kam.design.mfg@gmail.com</a>
+          <a href="tel:+33769363551">+33 7 69 36 35 51 FR</a>
+          <a href="tel:+18057956910">+1 (805) 795-6910 US</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 KAM Design. All rights reserved.</span>
+        <a href="#contact">Privacy Policy</a>
+        <span class="footer-credit">Made with love by Boosterpack</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
