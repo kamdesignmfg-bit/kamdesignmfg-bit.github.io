@@ -31,57 +31,66 @@ document.addEventListener("DOMContentLoaded", () => {
   // The reference header remains forest green while scrolling.
   // No scroll-time color override is applied.
 
-  const contactForm = document.querySelector("#contact-form");
-  const formMessage = document.querySelector(".form-message");
 
-  if (contactForm) {
-    contactForm.addEventListener("submit", async (event) => {
-      event.preventDefault();
+const contactForm = document.querySelector("#contact-form");
+const formMessage = document.querySelector(".form-message");
 
-      if (!contactForm.reportValidity()) return;
+if (contactForm) {
+  contactForm.addEventListener("submit", async (event) => {
+    event.preventDefault();
 
-      const submitButton = contactForm.querySelector('button[type="submit"]');
-      const originalButtonText = submitButton ? submitButton.innerHTML : "";
-      const formData = new FormData(contactForm);
-      const senderName = String(formData.get("name") || "").trim();
-      formData.set("_subject", `New project enquiry from ${senderName}`);
+    if (!contactForm.reportValidity()) return;
 
+    const submitButton = contactForm.querySelector('button[type="submit"]');
+    const originalButtonText = submitButton ? submitButton.innerHTML : "";
+    const formData = new FormData(contactForm);
+
+    if (submitButton) {
+      submitButton.disabled = true;
+      submitButton.textContent = "Sending…";
+    }
+
+    if (formMessage) {
+      formMessage.textContent = "Sending your project brief…";
+    }
+
+    try {
+      const response = await fetch(
+        "https://kamdesign-contact.kam-design-mfg.workers.dev/",
+        {
+          method: "POST",
+          body: formData
+        }
+      );
+
+      const result = await response.json();
+
+      if (!response.ok || result.success !== true) {
+        throw new Error(result.error || "Email could not be sent.");
+      }
+
+      contactForm.reset();
+
+      if (formMessage) {
+        formMessage.textContent =
+          "Thank you — your project brief has been sent. I'll be in touch soon.";
+      }
+
+    } catch (error) {
+      console.error("Contact form submission failed:", error);
+
+      if (formMessage) {
+        formMessage.textContent =
+          "Sorry, your message could not be sent. Please email kam.design.mfg@gmail.com directly.";
+      }
+
+    } finally {
       if (submitButton) {
-        submitButton.disabled = true;
-        submitButton.textContent = "Sending…";
+        submitButton.disabled = false;
+        submitButton.innerHTML = originalButtonText;
       }
-      if (formMessage) formMessage.textContent = "Sending your project brief…";
+    }
+  });
+}
 
-      try {
-        const response = await fetch(
-          "https://formsubmit.co/ajax/kam.design.mfg@gmail.com",
-          {
-            method: "POST",
-            headers: { Accept: "application/json" },
-            body: formData
-          }
-        );
-
-        const result = await response.json();
-        if (!response.ok || String(result.success).toLowerCase() === "false") {
-          throw new Error(result.message || "The email service could not accept your message.");
-        }
-
-        contactForm.reset();
-        if (formMessage) {
-          formMessage.textContent = "Thank you — your project brief has been sent. I'll be in touch soon.";
-        }
-      } catch (error) {
-        console.error("Contact form submission failed:", error);
-        if (formMessage) {
-          formMessage.textContent = "Sorry, your message could not be sent. Please email kam.design.mfg@gmail.com directly.";
-        }
-      } finally {
-        if (submitButton) {
-          submitButton.disabled = false;
-          submitButton.innerHTML = originalButtonText;
-        }
-      }
-    });
-  }
 });
